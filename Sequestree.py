@@ -9,10 +9,14 @@ st.title("Spatial Assessment and Backcasting of Tree Carbon Sequestration (CS) i
 
 choice = st.sidebar.selectbox(
     "Select map to display:",
-    ["Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions", "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions", 
-     "Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions", "Tree Carbon Sequestration Potential of Quezon City Philippines - Geographically Weighted Regression Predictions", 
-     "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Random Forest Predictions", "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions",
-     "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Random Forest Predictions", "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions"]
+    ["Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions", 
+     "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions", 
+     "Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions", 
+     "Tree Carbon Sequestration Potential of Quezon City Philippines - Geographically Weighted Regression Predictions", 
+     "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Random Forest Predictions", 
+     "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions",
+     "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Random Forest Predictions", 
+     "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions"]
 )
 
 if choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions":
