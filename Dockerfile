@@ -1,21 +1,29 @@
-# Use official Python 3.11 slim image
-FROM python:3.11-slim
+FROM python:3.11-bullseye
 
-# Set working directory inside container
 WORKDIR /app
 
-# Install system dependencies
+# System dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libexpat1 \
     gdal-bin \
     libgdal-dev \
     libspatialindex-dev \
+    libproj-dev \
+    libgeos-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
     build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-RUN pip install --no-cache-dir \
+# GDAL environment
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
+ENV C_INCLUDE_PATH=/usr/include/gdal
+
+# Python dependencies
+RUN pip install --upgrade pip
+RUN pip install numpy==1.26.0
+RUN pip install \
     branca==0.8.1 \
     folium==0.20.0 \
     geopandas==1.1.1 \
@@ -23,15 +31,14 @@ RUN pip install --no-cache-dir \
     mapclassify==2.10.0 \
     streamlit \
     streamlit-folium==0.25.2 \
-    rasterio==1.4.3\
+    rasterio==1.4.3 \
     localtileserver==0.10.6
 
-# Copy app files into container
+# Copy app code and rasters
 COPY . .
 
-# Expose Streamlit default port
 EXPOSE 8501
 
-# Command to run Streamlit
 CMD ["streamlit", "run", "sequestree.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
 
