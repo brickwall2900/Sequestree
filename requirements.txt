@@ -8,3 +8,4 @@ streamlit-folium==0.25.2
 rasterio==1.4.3
 localtileserver
 setuptools
+psutil
