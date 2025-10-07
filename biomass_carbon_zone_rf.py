@@ -54,6 +54,7 @@ def show_stuff():
             bottom: 50px; left: 50px; width: 220px; 
             z-index:9999; font-size:14px;
             background-color: white; padding: 10px; border:2px solid grey;
+            color: black;
             border-radius: 5px;
         ">
             <b>{title}</b><br>
