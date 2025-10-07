@@ -37,6 +37,9 @@ module_map = {
 module_name = module_map.get(choice)
 if module_name:
     thing = importlib.import_module(module_name)
-    # thing.render_map()
+    if hasattr(thing, "show_stuff"):
+        thing.show_stuff()
+    else:
+        st.error("Not implemented!")
 else:
     st.error("Selected option not found in module map. This should NOT happen!")
