@@ -9,3 +9,4 @@ rasterio==1.4.3
 localtileserver
 setuptools
 psutil
+rioxarray
