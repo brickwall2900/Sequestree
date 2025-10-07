@@ -73,15 +73,6 @@ def add_custom_legend(m, colors, labels, title):
 # --- Create Folium Map ---
 m = folium.Map(location=[14.65, 121.05], zoom_start=12, tiles=None)
 
-# White background
-folium.raster_layers.TileLayer(
-    tiles="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgEBAXV3kPAAAAAASUVORK5CYII=",
-    name="White Background",
-    attr="Blank",
-    overlay=False,
-    control=False
-).add_to(m)
-
 # --- Polygon styling ---
 def style_function(feature):
     val = feature["properties"].get(color_column)

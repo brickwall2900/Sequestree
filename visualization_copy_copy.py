@@ -26,16 +26,7 @@ with col1:
 with col2:
     right_year = st.selectbox("Right Map (Year)", list(biomass_rasters.keys()), index=len(biomass_rasters)-1)
 
-m = leafmap.Map(center=[14.65, 121.05], zoom=12, basemap=None)
-
-white_tiles = folium.raster_layers.TileLayer(
-    tiles="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgEBAXV3kPAAAAAASUVORK5CYII=",
-    name="White Background",
-    attr="Blank",
-    overlay=False,
-    control=False
-)
-white_tiles.add_to(m)
+m = leafmap.Map(center=[14.65, 121.05], zoom=12, basemap=None, tiles=None)
 
 m.split_map(
     left_layer=biomass_rasters[left_year],
