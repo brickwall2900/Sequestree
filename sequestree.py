@@ -36,6 +36,7 @@ module_map = {
 # Dynamically import the selected module
 module_name = module_map.get(choice)
 if module_name:
-    importlib.import_module(module_name)
+    thing = importlib.import_module(module_name)
+    thing.render_map()
 else:
     st.error("Selected option not found in module map. This should NOT happen!")
