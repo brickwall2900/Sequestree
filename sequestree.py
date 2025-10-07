@@ -22,15 +22,25 @@ choices = [
 choice = st.sidebar.selectbox("Select map to display:", choices)
 
 # Mapping between choice and corresponding module name
+# module_map = {
+#     choices[0]: "visualization",
+#     choices[1]: "visualization_copy",
+#     choices[2]: "visualization_copy_copy",
+#     choices[3]: "visualization_copy_copy_copy",
+#     choices[4]: "zonal",
+#     choices[5]: "zonal_copy",
+#     choices[6]: "zonal_copy_copy",
+#     choices[7]: "zonal_copy_copy_copy"
+# }
 module_map = {
-    choices[0]: "visualization",
-    choices[1]: "visualization_copy",
-    choices[2]: "visualization_copy_copy",
-    choices[3]: "visualization_copy_copy_copy",
-    choices[4]: "zonal",
-    choices[5]: "zonal_copy",
-    choices[6]: "zonal_copy_copy",
-    choices[7]: "zonal_copy_copy_copy"
+    choices[0]: "biomass_carbon_qc_rf",
+    choices[1]: "biomass_carbon_qc_gwr",
+    choices[2]: "carbon_sequestration_qc_rf",
+    choices[3]: "carbon_sequestration_qc_gwr",
+    choices[4]: "biomass_carbon_zone_rf",
+    choices[5]: "biomass_carbon_zone_gwr",
+    choices[6]: "carbon_sequestration_zone_rf",
+    choices[7]: "carbon_sequestration_zone_gwr",
 }
 
 # Dynamically import the selected module
