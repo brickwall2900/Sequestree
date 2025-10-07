@@ -29,6 +29,7 @@ with col2:
 m = leafmap.Map(center=[14.65, 121.05], zoom=12, basemap=None)
 
 white_tiles = folium.raster_layers.TileLayer(
+    # TODO: tiles aren't readable by browser?
     tiles="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgEBAXV3kPAAAAAASUVORK5CYII=",
     name="White Background",
     attr="Blank",

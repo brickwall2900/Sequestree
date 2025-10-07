@@ -19,6 +19,7 @@ choice = st.sidebar.selectbox(
      "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions"]
 )
 
+# TODO: ermm... there has to be a better way of doing this, is there?
 if choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions":
     import visualization
 elif choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions":
