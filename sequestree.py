@@ -4,34 +4,52 @@
 # In[2]:
 
 import streamlit as st
+import importlib
 
 st.title("Spatial Assessment and Backcasting of Tree Carbon Sequestration (CS) in Quezon City, Philippines")
 
-choice = st.sidebar.selectbox(
-    "Select map to display:",
-    ["Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions", 
-     "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions", 
-     "Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions", 
-     "Tree Carbon Sequestration Potential of Quezon City Philippines - Geographically Weighted Regression Predictions", 
-     "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Random Forest Predictions", 
-     "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions",
-     "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Random Forest Predictions", 
-     "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions"]
-)
+choices = [
+    "Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions",
+    "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions",
+    "Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions",
+    "Tree Carbon Sequestration Potential of Quezon City Philippines - Geographically Weighted Regression Predictions",
+    "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Random Forest Predictions",
+    "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions",
+    "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Random Forest Predictions",
+    "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions"
+]
 
-if choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions":
-    import visualization
-elif choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines - Geographically Weighted Regression Predictions":
-    import visualization_copy
-elif choice == "Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions":
-    import visualization_copy_copy
-elif choice == "Tree Carbon Sequestration Potential of Quezon City Philippines - Geographically Weighted Regression Predictions":
-    import visualization_copy_copy_copy
-elif choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Random Forest Predictions":
-    import zonal
-elif choice == "Tree Biomass and Carbon Stock of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions":
-    import zonal_copy
-elif choice == "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Random Forest Predictions":
-    import zonal_copy_copy
-elif choice == "Tree Carbon Sequestration Potential of Quezon City, Philippines Per Zone - Geographically Weighted Regression Predictions":
-    import zonal_copy_copy_copy
+choice = st.sidebar.selectbox("Select map to display:", choices)
+
+# Mapping between choice and corresponding module name
+# module_map = {
+#     choices[0]: "visualization",
+#     choices[1]: "visualization_copy",
+#     choices[2]: "visualization_copy_copy",
+#     choices[3]: "visualization_copy_copy_copy",
+#     choices[4]: "zonal",
+#     choices[5]: "zonal_copy",
+#     choices[6]: "zonal_copy_copy",
+#     choices[7]: "zonal_copy_copy_copy"
+# }
+module_map = {
+    choices[0]: "biomass_carbon_qc_rf",
+    choices[1]: "biomass_carbon_qc_gwr",
+    choices[2]: "carbon_sequestration_qc_rf",
+    choices[3]: "carbon_sequestration_qc_gwr",
+    choices[4]: "biomass_carbon_zone_rf",
+    choices[5]: "biomass_carbon_zone_gwr",
+    choices[6]: "carbon_sequestration_zone_rf",
+    choices[7]: "carbon_sequestration_zone_gwr",
+}
+
+# Dynamically import the selected module
+module_name = module_map.get(choice)
+if module_name:
+    thing = importlib.import_module(module_name)
+    if hasattr(thing, "show_stuff"):
+        thing.show_stuff()
+    else:
+        st.error("Not implemented!")
+else:
+    st.error("Selected option not found in module map. This should NOT happen!")
