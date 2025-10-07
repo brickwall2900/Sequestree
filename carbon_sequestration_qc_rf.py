@@ -12,11 +12,11 @@ def show_stuff():
     st.title("Tree Carbon Sequestration Potential of Quezon City, Philippines - Random Forest Predictions")
 
     biomass_rasters = {
-        "2020": "2020_POTENTIAL_RF.tif",
-        "2021": "2021_POTENTIAL_RF.tif",
-        "2022": "2022_POTENTIAL_RF.tif",
-        "2023": "2023_POTENTIAL_RF.tif",
-        "2024": "2024_POTENTIAL_RF.tif",
+        "2020": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2020_POTENTIAL_RF.tif",
+        "2021": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2021_POTENTIAL_RF.tif",
+        "2022": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2022_POTENTIAL_RF.tif",
+        "2023": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2023_POTENTIAL_RF.tif",
+        "2024": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2024_POTENTIAL_RF.tif",
     }
 
     col1, col2 = st.columns(2)

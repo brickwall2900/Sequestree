@@ -12,6 +12,7 @@ def show_stuff():
     st.title("Tree Biomass and Carbon Stock of Quezon City, Philippines - Random Forest Predictions")
 
     biomass_rasters = {
+        # YOOO BE SURE TO UPDATE THIS
         "2020": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2020_AGB_RF.tif",
         "2021": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2021_AGB_RF.tif",
         "2022": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2022_AGB_RF.tif",

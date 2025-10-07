@@ -16,11 +16,11 @@ def show_stuff():
 
     # --- Paths: GPKG files per year ---
     gpkg_files = {
-        "2020": "2020_POTENTIAL_RF_Real.gpkg",
-        "2021": "2021_POTENTIAL_RF_Real.gpkg",
-        "2022": "2022_POTENTIAL_RF_Real.gpkg",
-        "2023": "2023_POTENTIAL_RF_Real.gpkg",
-        "2024": "2024_POTENTIAL_RF_Real.gpkg"
+        "2020": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2020_POTENTIAL_RF_Real.gpkg",
+        "2021": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2021_POTENTIAL_RF_Real.gpkg",
+        "2022": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2022_POTENTIAL_RF_Real.gpkg",
+        "2023": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2023_POTENTIAL_RF_Real.gpkg",
+        "2024": "https://raw.githubusercontent.com/brickwall2900/Sequestree/refs/heads/main/2024_POTENTIAL_RF_Real.gpkg"
     }
 
     # --- Year selector ---
